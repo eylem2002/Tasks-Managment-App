@@ -68,7 +68,8 @@ public class SignUp extends AppCompatActivity   implements View.OnClickListener{
 
                             finish(); // Finish the current activity to prevent back navigation
                             Toast.makeText(getApplicationContext(), "Welcome " + user.getName(), Toast.LENGTH_LONG).show();
-                            startActivity( new Intent(SignUp.this, TaskPage.class));
+                           Intent intent= new Intent(SignUp.this, TaskPage.class);
+                            startActivity(intent);
 
                         } else {
                             Toast.makeText(getApplicationContext(), result.getMessage(), Toast.LENGTH_LONG).show();

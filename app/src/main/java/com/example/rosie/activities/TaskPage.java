@@ -19,7 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.rosie.R;
 import com.example.rosie.ShortPref.SharedPrefManager;
 import com.example.rosie.activities.introApp.SignUp;
-import com.example.rosie.fragments.FragmentViewProdects;
+import com.example.rosie.fragments.FragmentViewTasks;
 import com.example.rosie.fragments.ProfileFragment;
 import com.example.rosie.fragments.SettingsFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -32,17 +32,17 @@ public class TaskPage extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     FragmentTransaction mFragmentTransaction;
-    public static TextView navUsername,navEmail,navPhone;
+    public  static TextView navUsername,navEmail,navPhone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task_page);
 
-        if(!SharedPrefManager.getInstance(getApplicationContext()).isLoggedin())
-        {
-            finish();
-            startActivity(new Intent(getApplicationContext(), SignUp.class));
-        }
+//        if(!SharedPrefManager.getInstance(getApplicationContext()).isLoggedin())
+//        {
+//            finish();
+//            startActivity(new Intent(getApplicationContext(), SignUp.class));
+//        }
 
 
         drawerLayout =(DrawerLayout) findViewById(R.id.navLayout);
@@ -66,10 +66,10 @@ public class TaskPage extends AppCompatActivity {
                   SharedPrefManager.getInstance(getApplicationContext()).logout();
 
               }
-              else if (num==R.id.nav_home){
+               if (num==R.id.nav_home){
 
                     mFragmentTransaction=getSupportFragmentManager().beginTransaction();
-                    mFragmentTransaction.replace(R.id.container,new FragmentViewProdects());
+                    mFragmentTransaction.replace(R.id.container,new FragmentViewTasks());
                     mFragmentTransaction.addToBackStack(null);
                     mFragmentTransaction.commit();
                 }

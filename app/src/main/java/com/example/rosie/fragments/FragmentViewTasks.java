@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.rosie.R;
 import com.example.rosie.activities.Task;
-import com.example.rosie.adapter.productAdapter;
+import com.example.rosie.adapter.taskAdapter;
 import com.example.rosie.apis.RetrofitClient;
 
 import java.util.List;
@@ -26,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentViewProdects extends Fragment {
+public class FragmentViewTasks extends Fragment {
     ListView listView;
     @Nullable
     @Override
@@ -43,7 +43,7 @@ public class FragmentViewProdects extends Fragment {
             @Override
             public void onResponse(Call<List<Task>> call, Response<List<Task>> response) {
                 List<Task>productList=response.body();
-                productAdapter adapter=new productAdapter(getContext(),productList);
+                taskAdapter adapter=new taskAdapter(getContext(),productList);
                 listView.setAdapter(adapter);
 
                 Toast.makeText(getContext(),"donnnnnne",Toast.LENGTH_LONG).show();

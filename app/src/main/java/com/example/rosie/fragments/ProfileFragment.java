@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.rosie.R;
 import com.example.rosie.ShortPref.SharedPrefManager;
 
-import com.example.rosie.activities.navPage;
+import com.example.rosie.activities.TaskPage;
 import com.example.rosie.apis.RetrofitUpdate;
 import com.example.rosie.model.Result;
 import com.example.rosie.model.User;
@@ -75,7 +75,7 @@ public class ProfileFragment extends Fragment {
                             //storing the user in shared preferences
                             SharedPrefManager.getInstance(getContext()).userUpdate(user);
                             //reload the info of navigation drawer header
-                            navPage object = new navPage();
+                            TaskPage object = new TaskPage();
                             object.setHeaderInfo();
 
                             Toast.makeText(getContext(), "response msg ---> " + response.body().getMessage(), Toast.LENGTH_LONG).show();

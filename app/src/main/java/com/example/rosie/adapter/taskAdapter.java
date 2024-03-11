@@ -5,14 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.rosie.R;
 import com.example.rosie.activities.Task;
 
@@ -20,18 +17,18 @@ import com.example.rosie.activities.Task;
 import java.util.List;
 
 
-public class productAdapter extends ArrayAdapter<Task> {
+public class taskAdapter extends ArrayAdapter<Task> {
 
-    private List<Task> productList;
+    private List<Task> taskList;
     private boolean flag = false ;
 
     //the context object
     private Context mCtx;
 
-    public productAdapter(Context context, List<Task> products){
+    public taskAdapter(Context context, List<Task> products){
 
         super(context, R.layout.list_item,products);
-        this.productList = products;
+        this.taskList = products;
         this.mCtx = context;
 
     }
@@ -53,8 +50,18 @@ public class productAdapter extends ArrayAdapter<Task> {
         TextView taskname = (TextView) convertView.findViewById(R.id.taskname);
         TextView desc = (TextView) convertView.findViewById(R.id.taskdes);
 
-        taskname.setText(productList.get(position).getTaskn());
-        desc.setText(productList.get(position).getDesc());
+        TextView timetocreate = (TextView) convertView.findViewById(R.id.timeofcreate);
+
+        TextView timetodone = (TextView) convertView.findViewById(R.id.timetodone);
+
+    //    TextView status = (TextView) convertView.findViewById(R.id.taskStatusTv);
+
+
+        taskname.setText(taskList.get(position).getTaskn());
+        desc.setText(taskList.get(position).getDesc());
+        timetocreate.setText(taskList.get(position).getTimeC());
+        timetodone.setText(taskList.get(position).getTimeT());
+//        status.setText(taskList.get(position).gets());
 
       //  Glide.with(getContext()).load("http://10.0.2.2/store/Uploads/"+productList.get(position).getImg()).apply(new RequestOptions().override(600,600))
                // .error(R.drawable.notfound).into(img);

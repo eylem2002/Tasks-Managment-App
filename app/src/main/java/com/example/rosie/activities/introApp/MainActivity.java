@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import com.example.rosie.R;
+import com.example.rosie.activities.TaskPage;
 
 public class MainActivity extends AppCompatActivity {
 
