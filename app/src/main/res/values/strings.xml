@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rosie</string>
+    <string name="my_string_value">"you don't have an account? create one "</string>
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Closed</string>
+    <string name="title_activity_fragment_view_prodects">fragmentViewProdects</string>
+</resources>

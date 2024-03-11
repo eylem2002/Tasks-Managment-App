@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.introApp.SignIn"
+    android:background="@drawable/background1">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:id="@+id/toolbar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        <ImageView
+            android:layout_width="395dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cherry" />
+    </LinearLayout>
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="10dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="180dp"
+        android:shadowColor="#877F7F"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="6"
+        android:text="Sign Up "
+        android:textColor="#E87C96"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="/Sign In"
+        android:textColor="#E87C96"
+        android:textSize="20sp"
+        android:shadowColor="#877F7F"
+        android:shadowDx="2"
+        android:shadowDy="2"
+
+        />
+
+
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="381dp"
+        android:layout_height="360dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+
+
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/strokepink"
+            android:hint="Username"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:startIconDrawable="@drawable/pserson">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textSize="10sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pass"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/strokepink"
+            android:hint="Password"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="8"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/pass">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLength="9"
+                android:textSize="10sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/strokepink"
+            android:hint="Phone"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="9"
+            app:endIconMode="clear_text"
+            app:prefixText="+962"
+            app:startIconDrawable="@drawable/phone">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="10sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/strokepink"
+            android:hint="ِEmail"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:startIconDrawable="@drawable/email">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:inputType="textEmailAddress"
+                android:textSize="10sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="200dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/signin"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+
+            android:background="@drawable/buttonpink"
+            android:text="Sign In"
+            android:textColor="@color/pa" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="30dp"
+
+            android:background="@drawable/buttonpink"
+            android:text="Start"
+            android:textColor="@color/pa" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
