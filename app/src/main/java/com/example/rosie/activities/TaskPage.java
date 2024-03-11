@@ -3,12 +3,15 @@ package com.example.rosie.activities;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -38,6 +41,10 @@ public class TaskPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task_page);
 
+
+
+
+//
 //        if(!SharedPrefManager.getInstance(getApplicationContext()).isLoggedin())
 //        {
 //            finish();
@@ -53,7 +60,10 @@ public class TaskPage extends AppCompatActivity {
         navEmail = (TextView) headerView.findViewById(R.id.Email_nav);
         navPhone = (TextView) headerView.findViewById(R.id.Phone_nav);
 
-
+//        mFragmentTransaction=getSupportFragmentManager().beginTransaction();
+//        mFragmentTransaction.replace(R.id.container,new FragmentViewTasks());
+//        mFragmentTransaction.addToBackStack(null);
+//        mFragmentTransaction.commit();
 
 
         setHeaderInfo();
@@ -61,6 +71,9 @@ public class TaskPage extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
               int num= item.getItemId();
+
+
+
               if(num==R.id.nav_log_out){
                   finish();
                   SharedPrefManager.getInstance(getApplicationContext()).logout();

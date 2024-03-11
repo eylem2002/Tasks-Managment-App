@@ -31,7 +31,8 @@ public class FragmentViewTasks extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {//لربط ملف الxml with the activity
-    return inflater.inflate(R.layout.fragment_view_prodects,null);
+        return inflater.inflate(R.layout.fragment_view_tasks,null);
+
     }
 
     @Override

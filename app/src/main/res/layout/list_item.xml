@@ -30,8 +30,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="23"
+    android:layout_marginLeft="6dp"
+    android:layout_marginTop="6dp"
     android:layout_gravity="center"
-    android:textSize="30dp"
+    android:textSize="25dp"
     android:textColor="@color/white"
     android:id="@+id/timeofcreate"
     />
