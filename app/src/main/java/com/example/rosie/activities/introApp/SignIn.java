@@ -89,6 +89,8 @@ public class SignIn extends AppCompatActivity {
                         if (result.getError() != null && result.getError()) {
                             Log.v("Something went wrong", result.getMessage());
                             Toast.makeText(SignIn.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+
+
                         } else {
                             Log.d("Response ---> ", "User registered successfully");
                             Toast.makeText(getApplicationContext(), result.getMessage(), Toast.LENGTH_LONG).show();

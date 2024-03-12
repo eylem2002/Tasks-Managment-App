@@ -47,6 +47,10 @@ public class SignUp extends AppCompatActivity   implements View.OnClickListener{
 
             buttonSignIn.setOnClickListener(this);
             SignIn.setOnClickListener(this);
+
+            Intent intent = new Intent(SignUp.this, TaskPage.class);
+            intent.putExtra("USER_NAME", User.getName());
+            startActivity(intent);
         }
 
         private void userSignIn() {
@@ -63,6 +67,7 @@ public class SignUp extends AppCompatActivity   implements View.OnClickListener{
                         Result result = response.body();
                         if (!result.getError()) {
                             User user = result.getUser();
+
 
 
 

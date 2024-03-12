@@ -9,4 +9,7 @@ public interface APIUrl {
     String SIGN_UP = "http://10.0.2.2/rosie/insertUsers.php/";
     String UPDATE_INFO = "http://10.0.2.2/rosie/updateUsers.php/";
     String DELETE_USER = "http://10.0.2.2/rosie/deleteUsers.php/";
+
+    String ADD_TASKS = "http://10.0.2.2/rosie/insertTasks.php/";
+
 }

@@ -3,7 +3,7 @@ package com.example.rosie.model;
 public class User {
 
     private int id;
-    private String name;
+    private static String name;
     private String email;
     private String password;
     private String phone;
@@ -18,7 +18,7 @@ public class User {
 
     public int getId(){return id;}
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 

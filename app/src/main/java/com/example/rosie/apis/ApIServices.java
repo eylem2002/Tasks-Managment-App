@@ -33,6 +33,19 @@ public interface ApIServices {
             @Field("phone") String phone
 
     );
+
+
+    /*The SignUp Call */
+    @FormUrlEncoded
+    @POST("insertTasks.php")
+    Call<Result>  insertTasks(
+            @Field("taskName") String taskName,
+            @Field("description") String description,
+            @Field("timeToDo") String timeToDo,
+            @Field("timeCreate") String timeCreate
+
+    );
+
     @FormUrlEncoded
     @POST("updateUsers.php")
     Call<Result> updateUser(

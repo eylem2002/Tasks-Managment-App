@@ -9,6 +9,7 @@
     tools:context=".activities.TaskPage"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    android:background="#fffcf1"
     >
 
 
@@ -17,14 +18,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#107ADC"
+            android:background="#fffcf1"
             android:id="@+id/toolbar"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:elevation="4dp"
+
 
             />
 
