@@ -37,6 +37,8 @@ public class TaskPage extends AppCompatActivity {
     FragmentTransaction mFragmentTransaction;
     public static TextView navUsername, navEmail, navPhone;
 
+    public static String sample_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,5 +121,6 @@ public class TaskPage extends AppCompatActivity {
         navUsername.setText(name);
         navEmail.setText(email);
         navPhone.setText(phone);
+        sample_name=name;
     }
 }
