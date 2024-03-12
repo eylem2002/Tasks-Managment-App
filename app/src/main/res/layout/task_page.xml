@@ -19,14 +19,16 @@
         android:orientation="vertical"
         >
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#fffcf1"
             android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+            app:popupTheme="@style/Widget.AppCompat.Toolbar.Button.Navigation"
             android:elevation="4dp"
+            app:navigationIconTint="@color/black"
+
 
 
             />

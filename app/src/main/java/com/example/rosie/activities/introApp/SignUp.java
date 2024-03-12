@@ -48,9 +48,9 @@ public class SignUp extends AppCompatActivity   implements View.OnClickListener{
             buttonSignIn.setOnClickListener(this);
             SignIn.setOnClickListener(this);
 
-            Intent intent = new Intent(SignUp.this, TaskPage.class);
-            intent.putExtra("USER_NAME", User.getName());
-            startActivity(intent);
+//            Intent intent = new Intent(SignUp.this, TaskPage.class);
+//            intent.putExtra("USER_NAME", User.getName());
+//            startActivity(intent);
         }
 
         private void userSignIn() {
@@ -66,15 +66,21 @@ public class SignUp extends AppCompatActivity   implements View.OnClickListener{
                     if (response.isSuccessful() && response.body() != null) {
                         Result result = response.body();
                         if (!result.getError()) {
-                            User user = result.getUser();
+//                            User user = result.getUser();
+                            User user = new User((int)response.body().getUser().getId(),response.body().getUser().getName(),response.body().getUser().getEmail(),response.body().getUser().getPassword(),(String)response.body().getUser().getPhone());
+
+
 
 
 
 
                             finish(); // Finish the current activity to prevent back navigation
                             Toast.makeText(getApplicationContext(), "Welcome " + user.getName(), Toast.LENGTH_LONG).show();
-                           Intent intent= new Intent(SignUp.this, TaskPage.class);
+                            Intent intent= new Intent(SignUp.this, TaskPage.class);
                             startActivity(intent);
+
+                            SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
+
 
                         } else {
                             Toast.makeText(getApplicationContext(), result.getMessage(), Toast.LENGTH_LONG).show();

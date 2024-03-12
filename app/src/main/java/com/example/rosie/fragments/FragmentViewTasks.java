@@ -108,7 +108,7 @@ public class FragmentViewTasks extends Fragment {
                     if (result != null && !result.getError()) {
                         Log.d("Response ---> ", "Task inserted successfully");
                         Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_LONG).show();
-                        loadData(); // Reload data after successful insertion
+                        //loadData(); // Reload data after successful insertion
                     } else {
                         Log.v("Something went wrong", result.getMessage());
                         Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_SHORT).show();

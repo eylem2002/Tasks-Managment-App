@@ -46,7 +46,6 @@ public class taskAdapter extends ArrayAdapter<Task> {
         }
 
 
-      //  ImageView img = (ImageView) convertView.findViewById(R.id.imageView2);
         TextView taskname = (TextView) convertView.findViewById(R.id.taskname);
         TextView desc = (TextView) convertView.findViewById(R.id.taskdes);
 
@@ -63,8 +62,7 @@ public class taskAdapter extends ArrayAdapter<Task> {
         timetodone.setText(taskList.get(position).getTimeT());
 //        status.setText(taskList.get(position).gets());
 
-      //  Glide.with(getContext()).load("http://10.0.2.2/store/Uploads/"+productList.get(position).getImg()).apply(new RequestOptions().override(600,600))
-               // .error(R.drawable.notfound).into(img);
+
 
 
         return convertView;

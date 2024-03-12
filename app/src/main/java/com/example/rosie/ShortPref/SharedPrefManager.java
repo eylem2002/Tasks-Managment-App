@@ -18,7 +18,7 @@ public class SharedPrefManager {
     private static final String KEY_PHONE = "keyPhone" ;
     private static SharedPrefManager mInstance;
     private static Context mCtx;
-    private SharedPrefManager(Context context){
+    private SharedPrefManager (Context context){
         mCtx=context;
 
     }
@@ -55,26 +55,26 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences=mCtx.getSharedPreferences (SHARED_PREF_NAME, Context. MODE_PRIVATE) ;
         return new User(
                 sharedPreferences.getInt(KEY_ID,0),
-        sharedPreferences.getString(KEY_USERNAME,null),
-        sharedPreferences.getString(KEY_EMAIL,null),
-        sharedPreferences.getString(KEY_PASSWORD,null),
-        sharedPreferences.getString(KEY_PHONE,null)
+                sharedPreferences.getString(KEY_USERNAME,null),
+                sharedPreferences.getString(KEY_EMAIL,null),
+                sharedPreferences.getString(KEY_PASSWORD,null),
+                sharedPreferences.getString(KEY_PHONE,null)
 
         );
     }
-public boolean isLoggedin(){
-    SharedPreferences sharedPreferences=mCtx.getSharedPreferences (SHARED_PREF_NAME, Context. MODE_PRIVATE) ;
-      return sharedPreferences.getString(KEY_USERNAME,null)!=null;
+    public boolean isLoggedin(){
+        SharedPreferences sharedPreferences=mCtx.getSharedPreferences (SHARED_PREF_NAME, Context. MODE_PRIVATE) ;
+        return sharedPreferences.getString(KEY_USERNAME,null)!=null;
 
-}
-public void logout(){
+    }
+    public void logout(){
 
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences (SHARED_PREF_NAME, Context. MODE_PRIVATE) ;
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.clear();
         editor.apply();
-    Intent i= new Intent(mCtx, SignUp.class);
-    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    mCtx.startActivity(i);
-}
+        Intent i= new Intent(mCtx, SignUp.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mCtx.startActivity(i);
+    }
 }
