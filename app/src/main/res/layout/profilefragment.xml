@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:background="@drawable/strokepink"
-            android:hint="Email"
+            android:hint="Username"
             android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
             app:counterEnabled="true"
             app:counterMaxLength="15"
@@ -93,9 +93,10 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:background="@drawable/strokepink"
-            android:hint="Email"
+            android:hint="Password"
             android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
             app:counterEnabled="true"
+
             app:counterMaxLength="15"
             android:id="@+id/TextInputPassword"
 
@@ -105,8 +106,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="16"
+                android:inputType="textPassword"
+                android:maxLength="10"
                 android:textSize="15sp" />
 
 
@@ -123,10 +124,10 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:background="@drawable/strokepink"
-            android:hint="Email"
+            android:hint="Phone"
             android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
             app:counterEnabled="true"
-            app:counterMaxLength="15"
+            app:counterMaxLength="9"
             android:id="@+id/TextInputPhone"
 
             app:startIconDrawable="@drawable/pserson"
@@ -135,8 +136,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="16"
+                android:inputType="number"
+                android:maxLength="9"
                 android:textSize="15sp" />
 
 

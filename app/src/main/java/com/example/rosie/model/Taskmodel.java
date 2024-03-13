@@ -2,7 +2,7 @@ package com.example.rosie.model;
 
 public class Taskmodel {
 
-    private int id;
+    private  int id;
     private String taskName;
     private String description;
     private String timeToDo;
@@ -25,7 +25,7 @@ public class Taskmodel {
     public String getStatuc() {
         return status;
     }
-    public int getId() {
+    public  int getId() {
         return id;
     }
 

@@ -63,4 +63,11 @@ public interface ApIServices {
 
     );
 
+    @FormUrlEncoded
+    @POST("deleteTask.php")
+    Call<Result> deleteTask(
+            @Field("Id") int Id
+
+    );
+
 }

@@ -6,6 +6,9 @@ public class Task {
 
 
 
+
+    @SerializedName("Id")
+    int id;
     @SerializedName("taskn")
     String taskn;
     @SerializedName("desc")
@@ -30,11 +33,12 @@ public class Task {
     }
 
 
-    public Task(String taskn, String desc, String timeT,String timeC ,String statuss) {
+    public Task(String taskn, String desc, String timeT,String timeC ,String statuss,int id) {
         this.taskn = taskn;
         this.desc = desc;
         this.timeT = timeT;
         this.timeC=timeC;
+        this.id=id;
         this.statuss=statuss;
     }
 
@@ -61,6 +65,8 @@ public class Task {
         return timeC;
     }
 
-
+    public int getId() {
+        return id;
+    }
 
 }

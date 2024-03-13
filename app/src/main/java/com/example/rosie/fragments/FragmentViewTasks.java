@@ -171,7 +171,7 @@ public class FragmentViewTasks extends Fragment {
         });
     }
 
-    private void loadData() {
+    public void loadData() {
         Call<List<Task>> call = RetrofitClient.getInstance().getMyApi().getProduct();
         call.enqueue(new Callback<List<Task>>() {
             @Override
