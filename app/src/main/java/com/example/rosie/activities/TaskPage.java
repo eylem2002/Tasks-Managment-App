@@ -6,10 +6,12 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -67,12 +69,10 @@ public class TaskPage extends AppCompatActivity {
 
 
 
-
-
         toolbar.setBackgroundColor(Color.parseColor("#fffcf1"));
-        toolbar.setTitleTextColor(Color.BLACK);
+       toolbar.setTitleTextColor(Color.parseColor("#fffcf1"));
 
-
+        toolbar.setElevation(0);
 
 
         View headerView = navigationView.getHeaderView(0);
@@ -145,4 +145,23 @@ public class TaskPage extends AppCompatActivity {
         navPhone.setText(phone);
         sample_name=name;
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+
+        MenuItem item = menu.findItem(R.id.action_icon);
+        item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                Toast.makeText(getApplicationContext(), "Woohoo! Rosie is here for you!", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
+        return true;
+    }
+
+
+
 }

@@ -20,28 +20,41 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WELCOME BACK"
-            android:textSize="16dp"
-            android:textColor="@color/black"/>
+            android:text="Just Think How To Do it !"
+            android:textSize="20dp"
+            android:shadowColor="#877F7F"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:textStyle="bold"
+
+            android:textColor="#362621"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sample name"
-            android:textColor="@color/pinkdark"
-            android:textStyle="bold"
-            android:textSize="25dp"
+
+            android:textColor="#362621"
+            android:textAlignment="center"
+            android:textSize="20dp"
             android:id="@+id/userNameTv" />
 
     </LinearLayout>
 
         <SearchView
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="10dp"
             android:queryHint="Enter Task Name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:iconifiedByDefault="false"
-
+            android:background="@drawable/search_view_border"
             android:id="@+id/searchview"
+            android:backgroundTint="#EDFFFCF1"
+            android:outlineAmbientShadowColor="@color/pinkdark"
+         android:backgroundTintMode="src_over"
             />
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
@@ -50,28 +63,42 @@ android:backgroundTint="#6170C6"
     android:layout_marginTop="20dp"
 android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="15dp"
     android:id="@+id/activity"
     >
     <!-- achievement_circle.xml -->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_gravity="center">
 
 
+        <TextView
+            android:id="@+id/Support"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try to complete more tasks."
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+
+             />
 
         <TextView
             android:id="@+id/completionPercentageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00.00"
+            android:layout_gravity="center"
             android:textSize="20sp"
             android:textColor="@android:color/white"
 
             android:visibility="gone" />
 
-    </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 </androidx.cardview.widget.CardView>
@@ -88,7 +115,7 @@ android:layout_marginLeft="10dp"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:text="Progress tracking"
-                    android:textColor="@color/black"
+                    android:textColor="#362621"
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp" />
@@ -96,9 +123,9 @@ android:layout_marginLeft="10dp"
                             <com.google.android.material.floatingactionbutton.FloatingActionButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                android:outlineSpotShadowColor="@color/pinkdark"
-                                android:backgroundTint="@color/pinkdark"
-                                android:background="@color/pinkdark"
+                android:outlineSpotShadowColor="@color/lightpink"
+                                android:backgroundTint="@color/lightpink"
+                                android:background="@color/lightpink"
                               android:layout_marginLeft="170dp"
                                 app:fabSize="mini"
 

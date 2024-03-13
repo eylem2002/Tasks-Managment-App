@@ -21,7 +21,9 @@
     <style name="ToolbarColoredBackArrow" parent="Widget.AppCompat.Toolbar.Button.Navigation">
         <item name="android:textColorSecondary">#000000</item>
     </style>
-
+    <style name="potato" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:textColorSecondary">#D7385E</item>
+    </style>
     <style name="somepotato" >
         <item name="mrl_rippleOverlay">true</item> <!--فوق الاشي الي جواه   -->
         <item name="mrl_rippleColor">#EF8D9E</item>

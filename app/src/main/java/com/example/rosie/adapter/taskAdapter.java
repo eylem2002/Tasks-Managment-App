@@ -3,6 +3,7 @@ package com.example.rosie.adapter;
 //import static com.example.rosie.fragments.FragmentViewTasks.num_per;
 
 import static com.example.rosie.fragments.FragmentViewTasks.num_per;
+import static com.example.rosie.fragments.FragmentViewTasks.support;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -96,8 +97,11 @@ public class taskAdapter extends ArrayAdapter<Task> {
                     percent_num = (double) counter / totalTasks * 100;
                     num_per.setText(String.format("%.2f", percent_num));
 
-                // Notify the adapter of the data changes
-                notifyDataSetChanged();
+                    if(percent_num>50) support.setText("Well done! You have completed");
+                    else support.setText("Try to complete more tasks.");
+
+
+                notifyDataSetChanged();//this is to Notify the adapter of the data changes
             }
         });
 

@@ -9,7 +9,7 @@
     tools:context=".activities.TaskPage"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    android:background="#fffcf1"
+    android:background="#EDFFFCF1"
     >
 
 
@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#fffcf1"
+            app:elevation="0dp"
             android:id="@+id/toolbar"
             android:theme="@style/Widget.AppCompat.Toolbar.Button.Navigation"
             app:popupTheme="@style/Widget.AppCompat.Toolbar.Button.Navigation"
@@ -52,9 +53,27 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/acitvity_main_drawer" />
+        app:menu="@menu/acitvity_main_drawer"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:background="@drawable/background_gradient"
 
+        />
 
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/nav_view"-->
+<!--        app:itemTextColor="@color/white"-->
+<!--        app:itemIconTint="@color/white"-->
+<!--        app:itemIconSize="30dp"-->
+<!--        app:headerLayout="@layout/nav_header_main"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@drawable/sad"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        app:menu="@menu/menu_list_nav"-->
+<!--        >-->
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -52,6 +52,7 @@ public class FragmentViewTasks extends Fragment {
 
     TextView TextViewStatus;
     public static TextView num_per;
+    public static TextView support;
 
 
 
@@ -72,7 +73,7 @@ public class FragmentViewTasks extends Fragment {
 
         TextViewStatus= view.findViewById(R.id.taskStatusTv);
         num_per=view.findViewById(R.id.completionPercentageTextView);
-
+        support=view.findViewById(R.id.Support);
 
 
 
