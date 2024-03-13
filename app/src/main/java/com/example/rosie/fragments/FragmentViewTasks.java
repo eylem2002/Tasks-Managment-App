@@ -1,6 +1,7 @@
 package com.example.rosie.fragments;
 
 import static com.example.rosie.activities.TaskPage.sample_name;
+import static com.example.rosie.adapter.taskAdapter.moon;
 import static com.example.rosie.adapter.taskAdapter.percent_num;
 
 import android.app.AlertDialog;
@@ -44,7 +45,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FragmentViewTasks extends Fragment {
-    ListView listView;
+   public static ListView listView;
     FloatingActionButton fab;
     TextView userName;
     private AlertDialog addTaskDialog;
@@ -73,7 +74,7 @@ public class FragmentViewTasks extends Fragment {
         cardView=view.findViewById(R.id.cardView1);
 
 
-        TextViewStatus= view.findViewById(R.id.taskStatusTv);
+        TextViewStatus=(TextView) view.findViewById(R.id.taskStatusTv);
         num_per=view.findViewById(R.id.completionPercentageTextView);
         support=view.findViewById(R.id.Support);
 
@@ -113,17 +114,14 @@ public class FragmentViewTasks extends Fragment {
         EditText editTextDueDate = dialogView.findViewById(R.id.editDueDate);
 
 
-
-
-
         builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String title = editTextTitle.getText().toString();
                 String description = editTextDescription.getText().toString();
                 String dueDate = editTextDueDate.getText().toString();
-               // String status=TextViewStatus.getText().toString();
-               String status="something";
+                //String status=TextViewStatus.getText().toString();
+               String status=moon;
 
                 Date currentDate = new Date();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
@@ -156,7 +154,7 @@ public class FragmentViewTasks extends Fragment {
                     if (result != null && !result.getError()) {
                         Log.d("Response ---> ", "Task inserted successfully");
                         Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_LONG).show();
-                        loadData(); // Reload data after successful insertion
+                        loadData();
                     } else {
                         Log.v("Something went wrong", result.getMessage());
                         Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_SHORT).show();

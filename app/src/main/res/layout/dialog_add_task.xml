@@ -8,20 +8,28 @@
     <EditText
         android:id="@+id/editTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:paddingStart="12dp"
+
+        android:background="@drawable/strokepink"
         android:hint="Title" />
 
     <EditText
+        android:paddingStart="12dp"
+        android:background="@drawable/strokepink"
         android:id="@+id/editTextDescription"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:hint="Description"
         android:layout_marginTop="8dp" />
 
     <EditText
+        android:paddingStart="12dp"
+
+        android:background="@drawable/strokepink"
         android:id="@+id/editDueDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:hint="Due Date"
         android:layout_marginTop="8dp" />
 

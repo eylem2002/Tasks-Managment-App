@@ -48,14 +48,15 @@ import retrofit2.Response;
 
 
 public class taskAdapter extends ArrayAdapter<Task> {
-
-    private List<Task> taskList;
+//public static  List<Task> taskList2;
+    public static List<Task> taskList;
     private boolean flag = false ;
 
     //the context object
     private Context mCtx;
   static   int counter=0;
   CardView cardView;
+    static public String moon="Work";
     SearchView searchView;
     int Id;
     int taskId;
@@ -74,9 +75,15 @@ public class taskAdapter extends ArrayAdapter<Task> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
 
+//        taskList2.addAll(taskList);
+//        Log.i("TAG", taskList2.toString());
+//        Toast.makeText(getContext(), "the id" + taskList2.toString(), Toast.LENGTH_LONG).show();
 
-         taskId =   taskList.get(position).getId();
-        Toast.makeText(getContext(), "the id" + taskList.get(position).getId(), Toast.LENGTH_LONG).show();
+
+
+
+        taskId =   taskList.get(position).getId();
+     //   Toast.makeText(getContext(), "the id" + taskList.get(position).getId(), Toast.LENGTH_LONG).show();
 
 
         int totalTasks = taskList.size();
@@ -110,7 +117,7 @@ public class taskAdapter extends ArrayAdapter<Task> {
 
         today_name.setText(dayOfWeek);
         date_name.setText(formattedDate);
-        Toast.makeText(getContext(),"the date  ---> "+formattedDate,Toast.LENGTH_LONG).show();
+   //     Toast.makeText(getContext(),"the date  ---> "+formattedDate,Toast.LENGTH_LONG).show();
 
 
         ImageView imageView = convertView.findViewById(R.id.rightofNot);
@@ -156,12 +163,14 @@ public class taskAdapter extends ArrayAdapter<Task> {
                 if (task.isImageViewClicked()) {
                     imageView.setColorFilter(Color.GREEN);
                     statuss.setText("Done");
+                    moon="Done";
                     counter++;
 
 
                 } else {
                     imageView.setColorFilter(null);
                     statuss.setText("Work");
+                    moon="Work";
                     counter--;
                 }
 
