@@ -42,7 +42,8 @@ public interface ApIServices {
             @Field("taskName") String taskName,
             @Field("description") String description,
             @Field("timeToDo") String timeToDo,
-            @Field("timeCreate") String timeCreate
+            @Field("timeCreate") String timeCreate,
+            @Field("statuss") String statuss
 
     );
 

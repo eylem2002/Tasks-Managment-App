@@ -32,8 +32,17 @@
             android:textStyle="bold"
             android:textSize="25dp"
             android:id="@+id/userNameTv" />
+
     </LinearLayout>
 
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Enter Task Name"
+            android:iconifiedByDefault="false"
+
+            android:id="@+id/searchview"
+            />
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="160dp"
@@ -42,14 +51,28 @@ android:backgroundTint="#6170C6"
 android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     app:cardCornerRadius="20dp"
+    android:id="@+id/activity"
     >
-    <TextView
+    <!-- achievement_circle.xml -->
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity"
-        android:layout_gravity="center"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+        android:layout_gravity="center">
+
+
+
+        <TextView
+            android:id="@+id/completionPercentageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.00"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>
 

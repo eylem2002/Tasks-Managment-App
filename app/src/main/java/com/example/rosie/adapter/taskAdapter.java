@@ -1,14 +1,22 @@
 package com.example.rosie.adapter;
 
+//import static com.example.rosie.fragments.FragmentViewTasks.num_per;
+
+import static com.example.rosie.fragments.FragmentViewTasks.num_per;
+
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 
 import com.example.rosie.R;
 import com.example.rosie.activities.Task;
@@ -24,6 +32,9 @@ public class taskAdapter extends ArrayAdapter<Task> {
 
     //the context object
     private Context mCtx;
+  static   int counter=0;
+    SearchView searchView;
+    public static double percent_num=0;
 
     public taskAdapter(Context context, List<Task> products){
 
@@ -37,7 +48,10 @@ public class taskAdapter extends ArrayAdapter<Task> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        //get products data at certain position using Product class
+
+        int totalTasks = taskList.size();
+
+
         Task task = getItem(position);
 
         if(convertView == null){
@@ -53,18 +67,46 @@ public class taskAdapter extends ArrayAdapter<Task> {
 
         TextView timetodone = (TextView) convertView.findViewById(R.id.timetodone);
 
-    //    TextView status = (TextView) convertView.findViewById(R.id.taskStatusTv);
 
+       TextView statuss = (TextView) convertView.findViewById(R.id.taskStatusTv);
+
+
+        ImageView imageView = convertView.findViewById(R.id.rightofNot);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Task task = taskList.get(position);
+                task.toggleImageViewClicked();
+
+                // Update the ImageView color based on the flag
+                if (task.isImageViewClicked()) {
+                    imageView.setColorFilter(Color.GREEN);
+                    statuss.setText("Done");
+                    counter++;
+
+
+                } else {
+                    imageView.setColorFilter(null);
+                    statuss.setText("Work");
+                    counter--;
+                }
+
+                if (totalTasks != 0)
+                    percent_num = (double) counter / totalTasks * 100;
+                    num_per.setText(String.format("%.2f", percent_num));
+
+                // Notify the adapter of the data changes
+                notifyDataSetChanged();
+            }
+        });
 
         taskname.setText(taskList.get(position).getTaskn());
         desc.setText(taskList.get(position).getDesc());
         timetocreate.setText(taskList.get(position).getTimeC());
         timetodone.setText(taskList.get(position).getTimeT());
-//        status.setText(taskList.get(position).gets());
 
 
-
-
-        return convertView;
+     return convertView;
     }
 }

@@ -1,24 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:padding="20dp"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ltAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+
+        android:paddingTop="50dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/d" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/pinkdark"
+        android:text="Are you sure you want to delete your account? This action cannot be undone. "
+        />
 
     <Button
-        android:layout_margin="5dp"
         android:id="@+id/deleteBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text="Delete Account"
         android:textAllCaps="false"
-        android:textSize="8pt"
+
+        android:textSize="12sp"
         android:textColor="@color/white"
-        android:padding="20dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:paddingVertical="16dp"
+        android:background="@drawable/buttonpink"
+        android:backgroundTint="@color/pinkdark"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
         />
 
 

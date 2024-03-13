@@ -1,139 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="fragments.ProfileFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center"
-    android:layout_marginTop="50dp"
-    android:padding="20dp">
+    android:layout_height="match_parent">
 
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputUsername"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Username"
-        app:startIconDrawable="@drawable/ic_person"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:endIconMode="clear_text"
-        >
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:text="Welcome a gain :)"
+        android:layout_marginTop="80dp"
+        android:textStyle="bold"
 
+        android:textColor="@color/pinkdark"
+        android:layout_gravity="center"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLength="21"
-            android:textSize="20dp"
-            android:hint="text"
-
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Email"
-        app:startIconDrawable="@drawable/ic_email"
-        app:endIconMode="clear_text"
-        app:counterEnabled="true"
-        app:counterMaxLength="250"
-        >
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:maxLength="251"
-            android:textSize="20dp"
-            android:hint="Email"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Password"
-        app:startIconDrawable="@drawable/ic_lock"
-        app:counterEnabled="true"
-        app:counterMaxLength="8"
-        app:endIconMode="password_toggle"
-        >
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="pass"
-            android:textSize="20dp"
-
-            android:maxLength="10"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Phone"
-        app:startIconDrawable="@drawable/ic_phone"
-        app:counterEnabled="true"
-        app:prefixText="+962"
-        app:counterMaxLength="9"
-        app:endIconMode="clear_text"
-        >
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="number"
-            android:textSize="20dp"
-
-            android:maxLength="10"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
+        />
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        >
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:outlineProvider="paddedBounds"
+        android:layout_gravity="center">
 
 
-        <Button
-            android:id="@+id/updateBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update"
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            android:background="@drawable/buttonpink"
-            android:textAllCaps="false"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@drawable/strokepink"
+            android:hint="Email"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            android:id="@+id/TextInputUsername"
 
+            app:startIconDrawable="@drawable/pserson"
+            android:layout_marginTop="30dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textSize="15sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/TextInputEmail"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Email" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@drawable/strokepink"
+            android:hint="Email"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            android:id="@+id/TextInputEmail"
+
+            app:startIconDrawable="@drawable/pserson"
+            android:layout_marginTop="30dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textSize="15sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <EditText-->
+<!--            android:id="@+id/TextInputPassword"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Password" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@drawable/strokepink"
+            android:hint="Email"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            android:id="@+id/TextInputPassword"
+
+            app:startIconDrawable="@drawable/pserson"
+            android:layout_marginTop="30dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textSize="15sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/TextInputPhone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Phone" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@drawable/strokepink"
+            android:hint="Email"
+            android:theme="@style/Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            android:id="@+id/TextInputPhone"
+
+            app:startIconDrawable="@drawable/pserson"
+            android:layout_marginTop="30dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="16"
+                android:textSize="15sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_marginTop="20dp"
+       android:background="@drawable/buttonpink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:text="Update"
+        android:textAllCaps="false"/>
+
+
+
 </LinearLayout>

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="3dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="6dp"
-        android:elevation="14dp">
+        android:layout_margin="10dp"
+
+        android:elevation="14dp"
+        android:focusable="false"
+        android:clickable="false"
+
+
+        app:cardCornerRadius="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,21 +26,20 @@
 
             <LinearLayout
                 android:layout_width="60dp"
-                android:layout_height="85dp"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
                 android:background="@color/pinkdark"
-                >
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="23"
-    android:layout_marginLeft="6dp"
-    android:layout_marginTop="6dp"
-    android:layout_gravity="center"
-    android:textSize="25dp"
-    android:textColor="@color/white"
-    android:id="@+id/timeofcreate"
-    />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/timeofcreate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp"
+                    android:text="23"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
 
 
             </LinearLayout>
@@ -44,63 +47,84 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="2dp"
-                >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <TextView
+                android:orientation="vertical">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11:20 -13:00"
-                    android:textSize="17dp"
-                    android:textColor="@color/black"
-                    android:id="@+id/timetodone"
-                    />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/timetodone"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:text="11:20 -13:00"
+                        android:textColor="@color/black"
+                        android:textSize="17dp" />
+
+                    <TextView
+
+                        android:id="@+id/taskStatusTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Work"
+
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/taskname"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:text="Go with friends"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/rightofNot"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/taskname"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+                </LinearLayout>
+
 
                 <TextView
-                  android:layout_marginLeft="180dp"
+                    android:id="@+id/taskdes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="status"
-                    android:textSize="10dp"
-                    android:id="@+id/taskStatusTv"
-                    />
-            </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Go with frineds"
-                    android:textSize="17dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:id="@+id/taskname"
+                    android:text="Go out with frineds to mall\n on monday mera and soz"
 
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Go out with frineds to mall on monday mera and soz"
+                    android:textColor="@color/black"
                     android:textSize="15dp"
 
-                    android:textColor="@color/black"
-                    android:id="@+id/taskdes"
-
                     />
+
+
             </LinearLayout>
 
         </LinearLayout>
 
 
-
-
     </androidx.cardview.widget.CardView>
-
-
 
 
 </LinearLayout>

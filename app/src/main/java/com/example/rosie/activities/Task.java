@@ -16,45 +16,51 @@ public class Task {
     String timeC;
 
 
+    @SerializedName("statuss")
+    String statuss;
 
-    public Task(String taskn, String desc, String timeT,String timeC ) {
+    private boolean imageViewClicked;
+
+    public boolean isImageViewClicked() {
+        return imageViewClicked;
+    }
+
+    public void toggleImageViewClicked() {
+        imageViewClicked = !imageViewClicked;
+    }
+
+
+    public Task(String taskn, String desc, String timeT,String timeC ,String statuss) {
         this.taskn = taskn;
         this.desc = desc;
         this.timeT = timeT;
         this.timeC=timeC;
+        this.statuss=statuss;
     }
 
+
+    public String getStatus() {
+        return statuss;
+    }
     public String getTaskn() {
         return taskn;
     }
 
-    public void setTaskn(String taskn) {
-        this.taskn = taskn;
-    }
 
     public String getDesc() {
         return desc;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
 
     public String getTimeT() {
         return timeT;
     }
 
-    public void setTimeT(String timeT) {
-        this.timeT = timeT;
-    }
 
     public String getTimeC() {
         return timeC;
     }
 
-    public void setTimeC(String timeC) {
-        this.timeC = timeC;
-    }
 
 
 }

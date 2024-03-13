@@ -17,6 +17,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,6 +25,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.rosie.R;
 import com.example.rosie.ShortPref.SharedPrefManager;
 import com.example.rosie.activities.introApp.SignUp;
+import com.example.rosie.fragments.FragmentAboutApp;
+import com.example.rosie.fragments.FragmentAboutUs;
 import com.example.rosie.fragments.FragmentViewTasks;
 import com.example.rosie.fragments.ProfileFragment;
 import com.example.rosie.fragments.SettingsFragment;
@@ -34,15 +37,19 @@ public class TaskPage extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+
     FragmentTransaction mFragmentTransaction;
     public static TextView navUsername, navEmail, navPhone;
 
     public static String sample_name;
+    TextView number_per;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task_page);
+
+
 
         if(!SharedPrefManager.getInstance(getApplicationContext()).isLoggedin())
         {
@@ -54,6 +61,7 @@ public class TaskPage extends AppCompatActivity {
         drawerLayout = findViewById(R.id.navLayout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+
 
 
 
@@ -102,6 +110,18 @@ public class TaskPage extends AppCompatActivity {
                     mFragmentTransaction.addToBackStack(null);
                     mFragmentTransaction.commit();
                 }
+                else if (num == R.id.nav_about_us) {
+                    mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mFragmentTransaction.replace(R.id.container, new FragmentAboutUs());
+                    mFragmentTransaction.addToBackStack(null);
+                    mFragmentTransaction.commit();
+                }
+                else if (num == R.id.nav_AppInFo) {
+                    mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    mFragmentTransaction.replace(R.id.container, new FragmentAboutApp());
+                    mFragmentTransaction.addToBackStack(null);
+                    mFragmentTransaction.commit();
+                }
                 return true;
             }
         });
@@ -111,6 +131,8 @@ public class TaskPage extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+
     }
 
     public void setHeaderInfo() {

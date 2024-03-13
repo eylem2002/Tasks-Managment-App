@@ -1,21 +1,27 @@
 package com.example.rosie.fragments;
 
 import static com.example.rosie.activities.TaskPage.sample_name;
+import static com.example.rosie.adapter.taskAdapter.percent_num;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.rosie.R;
@@ -25,6 +31,8 @@ import com.example.rosie.apis.RetrofitClient;
 import com.example.rosie.apis.RetrofitTasks;
 import com.example.rosie.model.Result;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,6 +48,14 @@ public class FragmentViewTasks extends Fragment {
     FloatingActionButton fab;
     TextView userName;
     private AlertDialog addTaskDialog;
+    CardView cardView;
+
+    TextView TextViewStatus;
+    public static TextView num_per;
+
+
+
+    SearchView searchView;
 
     @Nullable
     @Override
@@ -51,16 +67,32 @@ public class FragmentViewTasks extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         listView = view.findViewById(R.id.listView);
         fab = view.findViewById(R.id.addTaskkFAB);
+        cardView=view.findViewById(R.id.cardView1);
 
+
+        TextViewStatus= view.findViewById(R.id.taskStatusTv);
+        num_per=view.findViewById(R.id.completionPercentageTextView);
+
+
+
+
+        num_per.setVisibility(View.VISIBLE);
         userName = view.findViewById(R.id.userNameTv);
 
         userName.setText(sample_name.toUpperCase());
+
+
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showAddTaskDialog();
             }
         });
+
+
+
         loadData();
     }
 
@@ -72,7 +104,12 @@ public class FragmentViewTasks extends Fragment {
 
         EditText editTextTitle = dialogView.findViewById(R.id.editTitle);
         EditText editTextDescription = dialogView.findViewById(R.id.editTextDescription);
+
         EditText editTextDueDate = dialogView.findViewById(R.id.editDueDate);
+
+
+
+
 
         builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
@@ -80,6 +117,8 @@ public class FragmentViewTasks extends Fragment {
                 String title = editTextTitle.getText().toString();
                 String description = editTextDescription.getText().toString();
                 String dueDate = editTextDueDate.getText().toString();
+               // String status=TextViewStatus.getText().toString();
+               String status="something";
 
                 Date currentDate = new Date();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.getDefault());
@@ -87,7 +126,7 @@ public class FragmentViewTasks extends Fragment {
                 Log.d("Today's Date", formattedDate);
                 String timecreate = formattedDate;
 
-                insertTask(title, description, dueDate, timecreate);
+                insertTask(title, description, dueDate, timecreate,status);
                 dialog.dismiss(); // Dismiss the dialog after processing
             }
         });
@@ -102,8 +141,8 @@ public class FragmentViewTasks extends Fragment {
         builder.create().show();
     }
 
-    private void insertTask(String Title, String Desc, String DueDate, String Timecreate) {
-        Call<Result> call = RetrofitTasks.getInstance().getMyApi().insertTasks(Title, Desc, DueDate, Timecreate);
+    private void insertTask(String Title, String Desc, String DueDate, String Timecreate,String Status) {
+        Call<Result> call = RetrofitTasks.getInstance().getMyApi().insertTasks(Title, Desc, DueDate, Timecreate,Status);
         call.enqueue(new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
