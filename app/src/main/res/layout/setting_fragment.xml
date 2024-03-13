@@ -27,6 +27,7 @@
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:fontFamily="@font/kohregular"
         android:textColor="@color/pinkdark"
         android:text="Are you sure you want to delete your account? This action cannot be undone. "
         />
@@ -40,7 +41,6 @@
         android:layout_marginBottom="20dp"
         android:text="Delete Account"
         android:textAllCaps="false"
-
         android:textSize="12sp"
         android:textColor="@color/white"
         android:paddingVertical="16dp"

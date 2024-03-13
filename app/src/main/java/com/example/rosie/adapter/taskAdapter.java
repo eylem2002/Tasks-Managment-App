@@ -3,8 +3,10 @@ package com.example.rosie.adapter;
 //import static com.example.rosie.fragments.FragmentViewTasks.num_per;
 
 import static android.app.PendingIntent.getActivity;
+import static com.example.rosie.fragments.FragmentViewTasks.date_name;
 import static com.example.rosie.fragments.FragmentViewTasks.num_per;
 import static com.example.rosie.fragments.FragmentViewTasks.support;
+import static com.example.rosie.fragments.FragmentViewTasks.today_name;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -34,7 +36,11 @@ import com.example.rosie.model.Taskmodel;
 import com.example.rosie.model.User;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -95,6 +101,18 @@ public class taskAdapter extends ArrayAdapter<Task> {
        TextView statuss = (TextView) convertView.findViewById(R.id.taskStatusTv);
 
 
+
+        Date currentDate = Calendar.getInstance().getTime();
+        SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String dayOfWeek = dayFormat.format(currentDate);
+        String formattedDate = dateFormat.format(currentDate);
+
+        today_name.setText(dayOfWeek);
+        date_name.setText(formattedDate);
+        Toast.makeText(getContext(),"the date  ---> "+formattedDate,Toast.LENGTH_LONG).show();
+
+
         ImageView imageView = convertView.findViewById(R.id.rightofNot);
 
         cardView= convertView.findViewById(R.id.cardView1);
@@ -152,9 +170,10 @@ public class taskAdapter extends ArrayAdapter<Task> {
                     percent_num = (double) counter / totalTasks * 100;
                 }
 
-                    num_per.setText(String.format("%.2f", percent_num));
+                num_per.setText(String.format("%.1f%%", percent_num));
 
-                    if(percent_num>50) support.setText("Well done! You have completed");
+
+                if(percent_num>50) support.setText("Well done! ");
                     else support.setText("Try to complete more tasks.");
 
 

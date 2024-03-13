@@ -38,6 +38,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginTop="6dp"
                     android:text="23"
+                    android:fontFamily="@font/kohregular"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
 
@@ -62,6 +63,8 @@
                         android:layout_marginTop="6dp"
                         android:layout_height="wrap_content"
                         android:text="11:20 -13:00"
+                        android:fontFamily="@font/kohregular"
+
                         android:textColor="@color/black"
                         android:textSize="17dp" />
 
@@ -71,6 +74,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Work"
+                        android:fontFamily="@font/kohregular"
+
 
                         android:textColor="@color/black"
                         android:textSize="10dp" />
@@ -86,6 +91,8 @@
                     <TextView
                         android:id="@+id/taskname"
                         android:layout_width="270dp"
+                        android:fontFamily="@font/kohbold"
+
                         android:layout_height="wrap_content"
                         android:text="Go with friends"
                         android:textColor="@color/black"
@@ -109,6 +116,8 @@
 
 
                 <TextView
+                    android:fontFamily="@font/kohregular"
+
                     android:id="@+id/taskdes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

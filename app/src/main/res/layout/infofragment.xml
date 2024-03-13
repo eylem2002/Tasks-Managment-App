@@ -14,6 +14,8 @@
         android:text="Instructions for Using the Application"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:fontFamily="@font/kohbold"
+        android:textColor="@color/lightpink"
         android:gravity="center_horizontal"
         android:layout_marginBottom="32dp"/>
 
@@ -23,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="1. Log in to the application using your credentials."
         android:textSize="18sp"
+        android:fontFamily="@font/kohregular"
         android:layout_marginBottom="16dp"/>
 
     <!-- Instruction 2 -->
@@ -31,6 +34,8 @@
         android:layout_height="wrap_content"
         android:text="2. Navigate to the 'Tasks' page to view your tasks."
         android:textSize="18sp"
+        android:fontFamily="@font/kohregular"
+
         android:layout_marginBottom="16dp"/>
 
     <!-- Instruction 3 -->
@@ -39,6 +44,8 @@
         android:layout_height="wrap_content"
         android:text="3. Tap on a task to view its details."
         android:textSize="18sp"
+        android:fontFamily="@font/kohregular"
+
         android:layout_marginBottom="16dp"/>
 
     <!-- Instruction 4 -->
@@ -47,13 +54,24 @@
         android:layout_height="wrap_content"
         android:text="4. Use the provided options to manage your tasks."
         android:textSize="18sp"
-        android:layout_marginBottom="32dp"/>
+        android:fontFamily="@font/kohregular"
 
-    <!-- Note Section -->
+        android:layout_marginBottom="32dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Note: This application is designed to help you manage your tasks efficiently. Please refer to the review page for detailed instructions and screenshots."
+        android:fontFamily="@font/kohregular"
+        android:textColor="@color/pinkdark"
+        android:text="Note"
+        android:textAllCaps="true"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kohregular"
+
+        android:text="This application is designed to help you manage your tasks efficiently. Please refer to the review page for detailed instructions and screenshots."
         android:textSize="16sp"/>
 
 </LinearLayout>

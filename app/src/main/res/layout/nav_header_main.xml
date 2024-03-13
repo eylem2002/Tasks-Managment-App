@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
+        android:fontFamily="@font/kohregular"
         android:text="Manage your tasks in easy way!"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -31,6 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
+            android:fontFamily="@font/kohregular"
+
             android:text="User Name"
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -39,11 +42,15 @@
     </LinearLayout>
        <TextView
         android:id="@+id/Email_nav"
+           android:fontFamily="@font/kohregular"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="email@example.com" />
     <TextView
         android:id="@+id/Phone_nav"
+        android:fontFamily="@font/kohregular"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Phone: +962123456" />

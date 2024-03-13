@@ -54,6 +54,8 @@ public class FragmentViewTasks extends Fragment {
     public static TextView num_per;
     public static TextView support;
 
+    public static  TextView date_name,today_name;
+
 
 
     SearchView searchView;
@@ -76,6 +78,8 @@ public class FragmentViewTasks extends Fragment {
         support=view.findViewById(R.id.Support);
 
 
+         today_name= (TextView) view.findViewById(R.id.today);
+         date_name= (TextView) view.findViewById(R.id.datee);
 
         num_per.setVisibility(View.VISIBLE);
         userName = view.findViewById(R.id.userNameTv);
