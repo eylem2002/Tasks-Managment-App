@@ -1,4 +1,7 @@
 # **Rosie App**
+<img width="395" alt="Screenshot 2024-03-17 at 10 33 08 PM" src="https://github.com/eylem2002/Tasks-Managment-App/assets/93215532/00bc8131-12d1-4702-8754-e019c1920470">
+
+
 ## **Project Description**
 This project aims to develop an Android application where users can record and track their expected tasks. The project aims to integrate concepts of Android Material Design and Android Lifecycle with the use of a database to store information. The project can also utilize Retrofit to communicate with an API interface to store data on the server.
 
